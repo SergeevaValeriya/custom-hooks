@@ -1,8 +1,4 @@
 import React, {useState} from 'react';
-import useInput from "./hooks/useInput";
-import Hover from "./components/Hover";
-import LoginForm from "./components/LoginForm";
-import List from "./components/List";
 import useDebounce from "./hooks/useDebounce";
 
 function App() {
@@ -16,17 +12,16 @@ function App() {
                 console.log(json)
             })
     }
+
     const onChange = e => {
        setValue(e.target.value);
-       search(e.target.value);
+       debouncedSearch(e.target.value);
     }
 
   return (
-    <div className="App">
+    <div>
         <input type="text" value={value} onChange={onChange} />
-        {/*<List />*/}
-        {/*<LoginForm />*/}
-        {/*<Hover />*/}
+
     </div>
   );
 }

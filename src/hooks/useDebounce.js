@@ -8,9 +8,9 @@ export default function useDebounce(callback, delay) {
             clearTimeout(timer.current)
         }
         timer.current = setTimeout(() => {
-            callback(...args);
+            callback(...args)
         }, delay)
     }, [callback, delay])
 
     return debouncedCallback;
-}
+};
